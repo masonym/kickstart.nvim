@@ -1,0 +1,26 @@
+-- https://github.com/obsidian-nvim/obsidian.nvim/blob/main/lua/obsidian/config/default.lua
+-- defaults
+return {
+  "obsidian-nvim/obsidian.nvim",
+  version = "*", -- use latest release, remove to use latest commit
+  ---@module 'obsidian'
+  ---@type obsidian.config
+  opts = {
+    legacy_commands = false, -- this will be removed in 4.0.0
+    workspaces = {
+      {
+        name = "Notes",
+        path = "~/Notes",
+      },
+      -- can add more here
+    },
+    templates = {
+        folder = "/templates"
+    },
+    ui = { enable = true, },
+    footer = { enabled = false },
+    note_id_func = function(title)
+        return title;
+    end,
+  },
+}
